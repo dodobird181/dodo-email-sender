@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "dodo-email-sender"
+version = "0.1.0"
+description = "Dodo Email Sender"
+authors = ["Samuel Morris <dodobird181@gmail.com>"]
+license = "GNU GENERAL PUBLIC LICENSE v3"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^3.1.0"
+python-decouple = "^3.8"
+gunicorn = "^23.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
