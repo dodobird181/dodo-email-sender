@@ -8,10 +8,10 @@ APP_PORT=8000
 
 echo "🔧 Installing system dependencies..."
 sudo apt update
-sudo apt install -y python3-pip python3-venv nginx curl
+sudo apt install -y python3-pip python3-venv nginx curl pipx
 
 echo "📦 Installing Poetry..."
-curl -sSL https://install.python-poetry.org | python3 -
+pipx install poetry
 export PATH="$HOME/.local/bin:$PATH"
 
 echo "🚀 Installing app with Poetry..."
