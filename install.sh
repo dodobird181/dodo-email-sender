@@ -7,9 +7,11 @@ APP_MODULE="main:app"
 APP_PORT=8000
 
 echo "🔧 Installing system dependencies..."
-sudo apt update
-sudo apt install -y python3-pip python3-venv nginx curl pipx
-
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install -y python3-pip python3-venv nginx curl
+echo "📦 Installing pipx..."
+pip install pipx
+pipx ensurepath
 echo "📦 Installing Poetry..."
 pipx install poetry
 export PATH="$HOME/.local/bin:$PATH"
