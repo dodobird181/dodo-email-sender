@@ -67,4 +67,4 @@ sudo ln -sf "$NGINX_FILE" /etc/nginx/sites-enabled/email_sender
 sudo systemctl start nginx
 sudo nginx -t && sudo systemctl reload nginx
 
-echo "✅ Email sender is now running! Access via: http://YOUR.SERVER.IP/healthcheck"
+echo "✅ Email sender is now running! Access via: http://YOUR.SERVER.IP/"
