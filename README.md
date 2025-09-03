@@ -11,4 +11,4 @@ sudo ./aws/install
 ```
 2. Run `aws configure` and enter your Access Key ID and Access Key Secret.
 3. Run `poetry install` to create a new python virtual environment and install the required python dependencies.
-3. **That's it!** The app can now be run in development mode using `poetry run python main.py`. Once the app has started, you can send test emails by editing and running `test_send_valid_sig.sh`.
+3. **That's it!** The app can now be run in development mode using `poetry run python main.py`. Once the app has started, you can send test emails by editing and running `test_send_email.sh`.
