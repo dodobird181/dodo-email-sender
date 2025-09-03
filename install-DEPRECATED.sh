@@ -25,16 +25,16 @@ echo "🦄 Creating Gunicorn systemd service..."
 SERVICE_NAME="email_sender"
 SERVICE_FILE="/etc/systemd/system/${SERVICE_NAME}.service"
 
-cat <<EOF | sudo tee "$SERVICE_FILE"
+cat <<EOF | sudo tee "/etc/systemd/system/dodo_email_sender.service"
 [Unit]
-Description=Gunicorn instance to serve Email Sender Flask App
+Description="Gunicorn instance to serve Email Sender Flask App"
 After=network.target
 
 [Service]
 User=$(whoami)
 Group=www-data
-WorkingDirectory=$APP_DIR
-ExecStart=$HOME/.local/bin/poetry run gunicorn --bind 127.0.0.1:${APP_PORT} $APP_MODULE
+WorkingDirectory="/home/$(whoami)/dodo_email_sender"
+ExecStart=/bin/bash -c "/home/dodob/.local/bin/poetry run gunicorn --bind 127.0.0.1:8000 main"
 Restart=always
 
 [Install]

@@ -15,9 +15,9 @@ def logger_from_config(config: Config) -> logging.Logger:
     subprocess.run(["mkdir", "-p", config.logdir], capture_output=True, check=True)
     file_handler = TimedRotatingFileHandler(
         f"{config.logdir}/log.txt",
-        when="midnight",  # rotate once per day at midnight
-        interval=30,  # ~monthly rotation
-        backupCount=12,
+        when="midnight",  # rotate once per month at midnight
+        interval=30,  # ~monthly rotation (in days)
+        backupCount=12,  # Keep a year's worth of backups
         utc=True,
     )
     file_handler.setLevel(logging.DEBUG)
